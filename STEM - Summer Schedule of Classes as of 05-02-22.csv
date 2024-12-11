@@ -1,4 +1,4 @@
-﻿Subject,Catalog,Section,Component,Session,MinUnits,Units,TotEnrl,CapEnrl,AcadOrg,Instructor,Capacity,Room,MtgStart,MtgEnd,Days,StartDate,EndDate,Term,Campus,ClassNbr,Total Credits,DUP,FULL,OVER
+Subject,Catalog,Section,Component,Session,MinUnits,Units,TotEnrl,CapEnrl,AcadOrg,Instructor,Capacity,Room,MtgStart,MtgEnd,Days,StartDate,EndDate,Term,Campus,ClassNbr,Total Credits,DUP,FULL,OVER
 BIO,141,D01,DED,8W1,4,4,19,30,STEM,"Abrahams,Shaheem",30,TUAL, , , ,5/23/2022,7/18/2022,2223,MAIN,35276,76,,,
 BIO,142,D01,DED,8W1,4,4,22,30,STEM,"Abrahams,Shaheem",30,TUAL, , , ,5/23/2022,7/18/2022,2223,MAIN,35278,88,,,
 BIO,142,D01L,LAB,8W1,0,0,22,30,STEM,"Abrahams,Shaheem",30,TUAL, , , ,5/23/2022,7/18/2022,2223,MAIN,35279,0,,,

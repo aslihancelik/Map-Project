@@ -33,4 +33,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="STEM - Summer Schedule of Classes as of 05-02-22.csv" />
+  </ItemGroup>
 </Project>
