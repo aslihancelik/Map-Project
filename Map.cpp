@@ -44,14 +44,40 @@ void Map::addEntry(const Schedule& entry){
 	records[entry.getKey()] = entry;
 }
 
+//Print all records????????????????????????????????????????????????????????????????????????????????
+void Map::print() const{
+	for (const auto& pair : records) {
+		pair.second.print();
+	}
 
-void Map::print(){}
+}
 
 //finds and prints all the records with a target subject
-void Map::find(string){}
+void Map::find(const string& subject) const{
+	//implicit iterator traverses the map through range-based loop
+	for (const auto& pair : records) {
+		if(pair.second.getSubject() == subject){
+			pair.second.print();
+		}
+	}
+
+}
 
 //finds and prints all the records with a target subject and catalog number
-void Map::find(string, int){}
+void Map::find(const string subject, const string catalog){
+	for (auto& pair : records) {
+		if (pair.second.getSubject() == subject && pair.second.getCatalog() == catalog) {
+			pair.second.print();
+		}
+	}
+
+}
 
 //finds and prints all the records given the instructor's last name
-void Map::find(string){}
+void Map::findInstructor(const string instructor){
+	for (auto& pair : records) {
+		if (pair.second.getInstructor() == instructor) {
+			pair.second.print();
+		}
+	}
+}

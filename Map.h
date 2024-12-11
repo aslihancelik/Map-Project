@@ -22,16 +22,16 @@ public:
 	//inserts the object into the map
 	void addEntry(const Schedule&);
 
-	void print();
+	void print() const;
 
 	//finds and prints all the records with a target subject
-	void find(string);
+	void find(const string&) const;
 
 	//finds and prints all the records with a target subject and catalog number
-	void find(string, int);
+	void find(const string, const string);
 
 	//finds and prints all the records given the instructor's last name
-	void find(string);
+	void findInstructor(string);
 
 
 };

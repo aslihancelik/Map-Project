@@ -63,7 +63,7 @@ public:
 
 	//print function 
 
-	void print();
+	void print() const;
 
 
 

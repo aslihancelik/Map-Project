@@ -42,8 +42,8 @@ bool Schedule::operator >=(const Schedule& other) const {
 
 //print function 
 
-void Schedule::print() {
-	cout << subject << "\t" << catalog << "\t" << section << "\t" 
-         << component << "\t" << session << "\t" << units << "\t" 
-         << totalEnrolled << "\t" << enrollCapacity << "\t" << instructor << endl;
+void Schedule::print() const{
+	cout << this->subject << "\t" << this->catalog << "\t" << this->section << "\t" 
+         << this->component << "\t" << this->session << "\t" << this->units << "\t" 
+         << this->totalEnrolled << "\t" << this->enrollCapacity << "\t" << this->instructor << endl;
 }
