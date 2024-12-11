@@ -1,6 +1,23 @@
 #include "Map.h"
 #include <fstream>
 #include <sstream>
+#include <vector>
+
+//// Function to split a string by a given delimiter 
+//vector<string> splitString(const std::string& str, char delimiter) {
+//	vector<string> tokens;
+//	string token;
+//	for (char ch : str) {
+//		if (ch == delimiter) {
+//			tokens.push_back(token);
+//			token.clear();
+//		}
+//		else {
+//			token += ch;
+//		}
+//	} tokens.push_back(token); // Add the last token return
+//	return tokens;
+//}
 
 //reads and discards the first record which contains column headers
 //reads the data from each row
