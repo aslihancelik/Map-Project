@@ -16,7 +16,7 @@ void Map::initSchedule(ifstream& infile){
 	while (getline(infile, line)) {
 
 		stringstream ss(line);
-		string subject, catalog, section, component, session, instructor;
+		string subject, catalog, section, component, session, instructor, unitsStr, totalEnrolledStr, enrolledCapacityStr;
 		int units, totalEnrolled, enrolledCapacity;
 
 		getline(ss, subject, ',');
@@ -24,13 +24,24 @@ void Map::initSchedule(ifstream& infile){
 		getline(ss, section, ',');
 		getline(ss, component, ',');
 		getline(ss, session, ',');
-		ss >> units;
+		getline(ss, unitsStr, ',');
+		getline(ss, totalEnrolledStr, ',');
+		getline(ss, enrolledCapacityStr, ',');
+		getline(ss, instructor, ',');
+		
+		// Convert the string values to integers 
+		units = std::stoi(unitsStr); 
+		totalEnrolled = std::stoi(totalEnrolledStr);
+		enrolledCapacity = std::stoi(enrolledCapacityStr);
+
+
+		/*ss >> units;
 		ss.ignore(1, ',');
 		ss >> totalEnrolled;
 		ss.ignore(1, ',');
 		ss >> enrolledCapacity;
 		ss.ignore(1, ',');
-		getline(ss, instructor, ',');
+		getline(ss, instructor, ',');*/
 
 		//create the Schedule object with the parsed values
 		Schedule entry(subject, catalog, section, component, session, units, totalEnrolled, enrolledCapacity);
