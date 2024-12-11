@@ -44,8 +44,15 @@ void Map::addEntry(const Schedule& entry){
 	records[entry.getKey()] = entry;
 }
 
+
+void Map::printHeader() const {
+	cout << "Subject\tCatalog\tSection\tComponent\tSession\tUnits\tTotEnrl\tCapEnrl\tInstructor\n";
+}
+
+
 //Print all records????????????????????????????????????????????????????????????????????????????????
 void Map::print() const{
+	printHeader();
 	for (const auto& pair : records) {
 		pair.second.print();
 	}
@@ -53,7 +60,8 @@ void Map::print() const{
 }
 
 //finds and prints all the records with a target subject
-void Map::find(const string& subject) const{
+void Map::findBySubject(const string& subject) const{
+	printHeader();
 	//implicit iterator traverses the map through range-based loop
 	for (const auto& pair : records) {
 		if(pair.second.getSubject() == subject){
@@ -64,9 +72,10 @@ void Map::find(const string& subject) const{
 }
 
 //finds and prints all the records with a target subject and catalog number
-void Map::find(const string subject, const string catalog){
+void Map::findBySubjectCatalog(const string subject, const string catalog){
+	printHeader();
 	for (auto& pair : records) {
-		if (pair.second.getSubject() == subject && pair.second.getCatalog() == catalog) {
+		if (pair.first == subject + "_" + catalog) {
 			pair.second.print();
 		}
 	}
@@ -74,9 +83,10 @@ void Map::find(const string subject, const string catalog){
 }
 
 //finds and prints all the records given the instructor's last name
-void Map::findInstructor(const string instructor){
+void Map::findInstructor(const string lastName){
+	printHeader();
 	for (auto& pair : records) {
-		if (pair.second.getInstructor() == instructor) {
+		if (pair.second.getInstructor().find(lastName) == string::npos) {
 			pair.second.print();
 		}
 	}
