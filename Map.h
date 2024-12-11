@@ -12,7 +12,6 @@ class Map {
 private:
 	map<string,Schedule> records;
 public:
-
 	//reads and discards the first record which contains column headers
 	//reads the data from each row
 	//creates Schedule object
