@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/*
+* This class encapsulates details about a schedule item such as subject, catalog number, section, 
+* component, session, units, total enrollment, enrollment capacity, and instructor. It also provides 
+* methods to generate a unique key for the item, compare schedule items, and print the item details. 
+*/
+
 class Schedule {
 private:
 	string subject;

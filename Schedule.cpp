@@ -1,3 +1,8 @@
+/*
+* This class encapsulates details about a schedule item such as subject, catalog number, section,
+* component, session, units, total enrollment, enrollment capacity, and instructor. It also provides
+* methods to generate a unique key for the item, compare schedule items, and print the item details.
+*/
 
 #include "Schedule.h"
 #include <iomanip>
@@ -16,7 +21,8 @@ Schedule::Schedule(string subject, int catalog, string section, string component
 	this->instructor = instructor;
 }
 
-//generate unique key for the Schedule item 
+// generate unique key for the Schedule item 
+// Combines the subject, catalog, and section to generate a unique key.
 string Schedule::getKey() const {
 	return subject + "_" + to_string(catalog) + "_" + section;
 }
@@ -42,7 +48,7 @@ bool Schedule::operator >=(const Schedule& other) const {
 }
 
 //print function 
-
+// to print a row of data
 void Schedule::print() const{
 
 	cout << left << setw(12) << this->subject 
