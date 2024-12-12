@@ -5,12 +5,14 @@
 
 using namespace std;
 
-// Function to split a string by a given delimiter 
 vector<string> splitString(const string& str, char delimiter) {
-	vector<string> tokens;
-	string token;
+	vector<string> tokens; string token; 
+	bool inQuotes = false; 
 	for (char ch : str) {
-		if (ch == delimiter) {
+		if (ch == '"') {
+			inQuotes = !inQuotes; // Toggle the inQuotes flag when encountering a quote character 
+		}
+		else if (ch == delimiter && !inQuotes) {
 			tokens.push_back(token);
 			token.clear();
 		}
@@ -23,7 +25,7 @@ vector<string> splitString(const string& str, char delimiter) {
 
 
 
-void Map::initSchedule(std::ifstream& infile) {
+void Map::initSchedule(ifstream& infile) {
 	string line; 
 	
 	// Read and discard header line
