@@ -37,7 +37,7 @@ void Map::initSchedule(ifstream& infile) {
 		vector<string> fields = splitString(line, ','); 
 
 		string subject = fields[0];
-		int catalog = stoi(fields[1]);
+		int catalog = stoi(fields[1]);  //turn into integer
 		string section = fields[2];
 		string component = fields[3];
 		string session = fields[4];
@@ -69,7 +69,7 @@ void Map::printHeader() const {
 }
 
 
-//Print all records????????????????????????????????????????????????????????????????????????????????
+//Print all records
 void Map::print() const{
 	printHeader();
 	for (const auto& pair : records) {
@@ -108,7 +108,7 @@ void Map::findBySubjectCatalog(const string subject, const int catalog){
 void Map::findInstructor(const string lastName){
 	printHeader();
 	for (auto& pair : records) {
-		if (pair.second.getInstructor().find(lastName) == string::npos) {
+		if (pair.second.getInstructor().find(lastName) != string::npos) {
 			pair.second.print();
 		}
 	}
