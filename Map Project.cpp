@@ -1,5 +1,11 @@
 // Map Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+// This is the client program for managing schedule records using the Map class. 
+// The program reads schedule data from a file, initializes the schedule, and provides
+// a menu for the user to print the schedule, find records by subject or instructor, and more.
+//
+//
+// Programmer:Aslihan Aria Celik
 
 #include <iostream>
 #include <fstream>
@@ -12,19 +18,21 @@ int main()
 {
     Map mySchedule;
 
+    //open the schedule file
     ifstream infile("STEM-Summer 2022 Schedule of Classes as of 05-02-22.csv");
     if (!infile) {
         cerr << "Unable to open file";
         return 1;
     }
 
+    //initalize the schedule from the file
     mySchedule.initSchedule(infile);
     infile.close();
 
     int choice;
 
     do {
-
+        //Display menu options to the user
         cout << "Menu:\n"; 
         cout << "1. Print Schedule\n"; 
         cout << "2. Find by Subject\n"; 
@@ -36,6 +44,7 @@ int main()
         string subject, lastName;
         int catalog;
 
+        // Execute the appropriate action based on user choice
         switch (choice) { 
             case 1: 
                 mySchedule.print(); 
@@ -59,7 +68,7 @@ int main()
                 break; 
         }
 
-    } while (choice != 5);
+    } while (choice != 5); //repeat until user chooses to exit
 
     return 0;
 }
