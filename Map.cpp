@@ -3,6 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -36,13 +37,13 @@ void Map::initSchedule(ifstream& infile) {
 		vector<string> fields = splitString(line, ','); 
 
 		string subject = fields[0];
-		string catalog = fields[1];
+		int catalog = stoi(fields[1]);
 		string section = fields[2];
 		string component = fields[3];
 		string session = fields[4];
-		int units = std::stoi(fields[6]);
-		int totalEnrolled = std::stoi(fields[7]);
-		int enrolledCapacity = std::stoi(fields[8]);
+		int units = stoi(fields[6]);
+		int totalEnrolled = stoi(fields[7]);
+		int enrolledCapacity = stoi(fields[8]);
 		string instructor = fields[10];
 		Schedule entry(subject, catalog, section, component, session, units, totalEnrolled, enrolledCapacity, instructor);
 		addEntry(entry);
@@ -90,13 +91,16 @@ void Map::findBySubject(const string& subject) const{
 }
 
 //finds and prints all the records with a target subject and catalog number
-void Map::findBySubjectCatalog(const string subject, const string catalog){
+void Map::findBySubjectCatalog(const string subject, const int catalog){
 	printHeader();
 	for (auto& pair : records) {
-		if (pair.first == subject + "_" + catalog) {
-			pair.second.print();
+		string keyToFind = subject + "_" + to_string(catalog);
+		if (pair.first.find(keyToFind) != string::npos) { 
+			pair.second.print(); 
 		}
 	}
+
+
 
 }
 

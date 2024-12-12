@@ -29,7 +29,7 @@ public:
 	void findBySubject(const string&) const;
 
 	//finds and prints all the records with a target subject and catalog number
-	void findBySubjectCatalog(const string, const string);
+	void findBySubjectCatalog(const string, const int);
 
 	//finds and prints all the records given the instructor's last name
 	void findInstructor(string);

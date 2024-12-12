@@ -8,7 +8,7 @@ using namespace std;
 class Schedule {
 private:
 	string subject;
-	string catalog;
+	int catalog;
 	string section;
 	string component;
 	string session;
@@ -21,7 +21,7 @@ public:
 
 	//constructor
 
-	Schedule(string = "", string = "", string = "", string = "", string = "", int = 0, int = 0, int = 0, string = "");
+	Schedule(string = "", int = 0, string = "", string = "", string = "", int = 0, int = 0, int = 0, string = "");
 
 	//Getters
 
@@ -30,7 +30,7 @@ public:
 
 	string getSubject() const {return subject;}
 
-	string getCatalog() const { return catalog;}
+	int getCatalog() const { return catalog;}
 
 	string getSection() const { return section; }
 

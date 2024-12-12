@@ -4,7 +4,7 @@
 
 //constructor
 
-Schedule::Schedule(string subject, string catalog, string section, string component, string session, int units, int totalEnrolled, int enrollCapacity, string instructor) {
+Schedule::Schedule(string subject, int catalog, string section, string component, string session, int units, int totalEnrolled, int enrollCapacity, string instructor) {
 	this->subject = subject;
 	this->catalog = catalog;
 	this->section = section;
@@ -18,7 +18,7 @@ Schedule::Schedule(string subject, string catalog, string section, string compon
 
 //generate unique key for the Schedule item 
 string Schedule::getKey() const {
-	return subject + "_" + catalog + "_" + section;
+	return subject + "_" + to_string(catalog) + "_" + section;
 }
 
 //operator overloads

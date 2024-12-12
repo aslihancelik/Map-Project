@@ -33,7 +33,8 @@ int main()
         cout << "5. Exit\n"; 
         cout << "Enter your choice: "; 
         cin >> choice;
-        string subject, catalog, lastName;
+        string subject, lastName;
+        int catalog;
 
         switch (choice) { 
             case 1: 
