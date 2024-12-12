@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -56,7 +57,14 @@ void Map::addEntry(const Schedule& entry){
 
 
 void Map::printHeader() const {
-	cout << "Subject\tCatalog\tSection\tComponent\tSession\tUnits\tTotEnrl\tCapEnrl\tInstructor\n";
+
+	// Assuming all rows have the same number of columns 
+	vector<string> headers = {"Subject", "Catalog", "Section", "Component", "Session", "Units", "TotEnrl", "CapEnrl", "Instructor"}; 
+	// Print headers with fixed width 
+	for (const string& header : headers) { 
+		cout << left << setw(12) << header; 
+	}
+	cout << "\n";
 }
 
 
