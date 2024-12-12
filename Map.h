@@ -4,6 +4,7 @@
 #include <utility>
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Schedule.h"
 
 using namespace std;
@@ -12,6 +13,9 @@ class Map {
 private:
 	map<string,Schedule> records;
 public:
+	//splits the string by the delimiter
+	vector<string> splitString(const std::string& str, char delimiter);
+
 	//reads and discards the first record which contains column headers
 	//reads the data from each row
 	//creates Schedule object

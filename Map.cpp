@@ -7,7 +7,7 @@
 
 using namespace std;
 
-vector<string> splitString(const string& str, char delimiter) {
+vector<string> Map::splitString(const string& str, char delimiter) {
 	vector<string> tokens; string token; 
 	bool inQuotes = false; 
 	for (char ch : str) {
